@@ -1,0 +1,12 @@
+<%= form_for :flickr, url: root_path, method: 'get' do |f| %>
+  <%= f.label :id, "Flickr ID:" %>
+  <%= f.text_field :id %>
+  <%= f.submit "Get feed" %>
+  <% unless current_user.empty?%>
+    <%= link_to "(logout)", logout_path, method: :delete %>
+  <% end %>
+<% end %>
+
+<% unless current_user.empty? %>
+  <%= render 'flickr/feed' %>
+<% end %>

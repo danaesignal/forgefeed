@@ -1,0 +1,3 @@
+<% @photostream.each do |photo| %>
+  <%= image_tag FlickRaw.url(get_info(photo)) %>
+<% end %>
